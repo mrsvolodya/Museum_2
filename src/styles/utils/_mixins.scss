@@ -1,6 +1,87 @@
+@import 'vars'; // Import vars to access $header-height-* variables
+
+// Responsive breakpoints - Define first
+@mixin mobile {
+  @media (max-width: 639px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 640px) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+// Tablet and up (768px+) - for components that need tablet+ breakpoint
+@mixin tablet-up {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1280px) {
+    @content;
+  }
+}
+
+// Header height mixin
+@mixin header-height {
+  height: $header-height-mobile;
+
+  @include tablet-up {
+    height: $header-height-tablet;
+  }
+
+  @include desktop {
+    height: $header-height-desktop;
+  }
+}
+
+// Viewport height minus header mixin
+@mixin viewport-height-minus-header {
+  min-height: calc(100vh - #{$header-height-mobile});
+
+  @include tablet-up {
+    min-height: calc(100vh - #{$header-height-tablet});
+  }
+
+  @include desktop {
+    min-height: calc(100vh - #{$header-height-desktop});
+  }
+}
+
+// Content padding mixin
+@mixin page-padding(
+  $mobile-h: 20px,
+  $mobile-v: 20px,
+  $tablet-h: 39px,
+  $tablet-v: 20px,
+  $desktop-h: 55px,
+  $desktop-v: 20px
+) {
+  padding: $mobile-v $mobile-h;
+
+  @include tablet-up {
+    padding: $tablet-v $tablet-h;
+  }
+
+  @include desktop {
+    padding: $desktop-v $desktop-h;
+  }
+}
+
+// Hover transition
 @mixin hover($_property, $_toValue) {
   transition: #{$_property} 0.3s;
+
   &:hover {
     #{$_property}: $_toValue;
   }
+}
+
+// Transition shorthand
+@mixin transition($property) {
+  transition: $property 0.3s ease;
 }

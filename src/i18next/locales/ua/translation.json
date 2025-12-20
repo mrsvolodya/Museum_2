@@ -1,0 +1,15 @@
+{
+  "header": {
+    "language": "UA"
+  },
+  "menu": {
+    "schedule": "Розклад сьогодні:",
+    "scheduleTime": "12:00 - 19:00",
+    "address": "Адреса:",
+    "addressValue": "Київ, вул. М. Грушевського, 6",
+    "exhibitions": "Актуальні виставки",
+    "events": "Найближчі події",
+    "news": "Новини",
+    "buyTicket": "Купити квиток"
+  }
+}

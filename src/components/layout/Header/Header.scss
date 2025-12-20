@@ -1,0 +1,69 @@
+@import '../../../styles/utils/vars';
+@import '../../../styles/utils/mixins';
+.header {
+  display: flex;
+  background-color: $c-background;
+  height: 80px;
+  padding: 20px;
+  font-family: $font-playfair;
+  width: 100%;
+  @include page-padding;
+
+  &__content {
+    width: 100%;
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  // &__brand {
+  //   // Brand container styles if needed
+  // }
+
+  // &__logo {
+  //   // Logo link styles if needed
+  // }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+  }
+
+  &__btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    // &--menu {
+    //   // Menu button specific styles
+    // }
+
+    // &--close {
+    //   // Close button specific styles
+    // }
+  }
+
+  &__icon {
+    display: block;
+
+    &--close {
+      width: 22px;
+      height: 22px;
+    }
+  }
+}
+
+@media (max-width: 768) {
+  .header__btn {
+    order: 2;
+  }
+
+  .language-switcher {
+    order: 1;
+  }
+}

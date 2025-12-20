@@ -1,0 +1,15 @@
+{
+  "header": {
+    "language": "EN"
+  },
+  "menu": {
+    "schedule": "Schedule today:",
+    "scheduleTime": "12:00 - 19:00",
+    "address": "Address:",
+    "addressValue": "Kyiv, 6 M. Hrushevskoho St.",
+    "exhibitions": "Current exhibitions",
+    "events": "Upcoming events",
+    "news": "News",
+    "buyTicket": "Buy ticket"
+  }
+}
