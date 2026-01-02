@@ -6,7 +6,7 @@ const P = ({
   fsize = '16px',
   lineHeight = 'normal',
   children,
-  color = colors.gray,
+  color = colors.white,
   textAlign = 'center',
   className = '',
 }) => {

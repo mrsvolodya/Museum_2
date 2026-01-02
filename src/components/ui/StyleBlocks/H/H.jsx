@@ -6,7 +6,7 @@ import { colors } from '../../../../styles/colors';
 const H = ({
   size = 'm',
   children,
-  color = colors.black,
+  color = colors.white,
   textAlign = 'center',
   lh = false,
   as = 'h2',

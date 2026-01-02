@@ -1,0 +1,72 @@
+@use 'sass:color';
+@import '../../../styles/utils/vars';
+@import '../../../styles/utils/mixins';
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-family: $font-raleway;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  border: none;
+  height: $button-height;
+
+  &--primary {
+    background-color: $c-main;
+    color: $c-white;
+    width: $button-width-md;
+
+    @include tablet {
+      width: $button-width-lg;
+    }
+
+    @include desktop {
+      width: $button-width-md;
+    }
+
+    &:hover:not(&--disabled) {
+      background-color: color.adjust($c-main, $lightness: -10%);
+      border-color: color.adjust($c-main, $lightness: -10%);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active:not(&--disabled) {
+      transform: translate(0);
+    }
+  }
+
+  &--secondary {
+    background-color: transparent;
+    color: $c-main;
+    border: 1px solid $c-main;
+    width: $button-width-md;
+
+    @include tablet {
+      width: $button-width-xs;
+    }
+
+    @include desktop {
+      width: $button-width-sm;
+    }
+
+    &:hover:not(&--disabled) {
+      background-color: $c-main;
+      color: $c-white;
+    }
+  }
+
+  &--xs {
+    width: $button-width-xs;
+  }
+
+  &--md {
+    width: $button-width-md;
+  }
+
+  &--lg {
+    width: $button-width-lg;
+  }
+}

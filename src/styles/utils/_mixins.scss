@@ -13,13 +13,6 @@
   }
 }
 
-// Tablet and up (768px+) - for components that need tablet+ breakpoint
-@mixin tablet-up {
-  @media (min-width: 768px) {
-    @content;
-  }
-}
-
 @mixin desktop {
   @media (min-width: 1280px) {
     @content;
@@ -27,10 +20,11 @@
 }
 
 // Header height mixin
+
 @mixin header-height {
   height: $header-height-mobile;
 
-  @include tablet-up {
+  @include tablet {
     height: $header-height-tablet;
   }
 
@@ -43,7 +37,7 @@
 @mixin viewport-height-minus-header {
   min-height: calc(100vh - #{$header-height-mobile});
 
-  @include tablet-up {
+  @include tablet {
     min-height: calc(100vh - #{$header-height-tablet});
   }
 
@@ -63,7 +57,7 @@
 ) {
   padding: $mobile-v $mobile-h;
 
-  @include tablet-up {
+  @include tablet {
     padding: $tablet-v $tablet-h;
   }
 

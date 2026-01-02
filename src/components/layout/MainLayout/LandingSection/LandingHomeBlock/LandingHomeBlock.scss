@@ -1,11 +1,20 @@
 @import '../../../../../styles/utils/vars';
+@import '../../../../../styles/utils/mixins';
 
 .landing-home-block {
   width: 100%;
-  min-height: calc(100vh - 80px);
   background-color: $c-background;
+  @include viewport-height-minus-header;
+  display: flex;
 
-  &__header {
-    // Header styles
+  &__container {
+    width: 100%;
+    @include page-padding;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 }

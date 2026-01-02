@@ -1,13 +1,14 @@
 @import '../../../styles/utils/vars';
 @import '../../../styles/utils/mixins';
+
 .header {
   display: flex;
   background-color: $c-background;
-  height: 80px;
   padding: 20px;
   font-family: $font-playfair;
   width: 100%;
   @include page-padding;
+  @include header-height;
 
   &__content {
     width: 100%;
