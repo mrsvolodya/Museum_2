@@ -4,11 +4,14 @@
 .landing-home-block {
   width: 100%;
   background-color: $c-background;
+
   @include viewport-height-minus-header;
+
   display: flex;
 
   &__container {
     width: 100%;
+
     @include page-padding;
   }
 
