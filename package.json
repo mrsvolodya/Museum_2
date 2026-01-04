@@ -2,6 +2,13 @@
   "name": "museum_2",
   "version": "1.0.0",
   "description": "museum_2",
+  "alias": {
+    "@components/*": "./src/components/$1",
+    "@assets/*": "./src/assets/$1",
+    "@hooks/*": "./src/hooks/$1",
+    "@styles/*": "./src/styles/$1",
+    "@utils/*": "./src/utils/$1"
+  },
   "scripts": {
     "init": "mate-scripts init",
     "start": "mate-scripts start",

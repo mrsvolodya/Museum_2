@@ -12,6 +12,7 @@
   white-space: nowrap;
   border: none;
   height: $button-height;
+  z-index: 222;
 
   &--primary {
     background-color: $c-main;
@@ -23,18 +24,23 @@
     }
 
     @include desktop {
-      width: $button-width-md;
+      width: $button-width-sm;
     }
 
     &:hover:not(&--disabled) {
-      background-color: color.adjust($c-main, $lightness: -10%);
-      border-color: color.adjust($c-main, $lightness: -10%);
+      background-color: $c-main-hover;
+      border-color: $c-main-hover;
       transform: translateY(-2px);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     &:active:not(&--disabled) {
+      background-color: $c-main-pressed;
       transform: translate(0);
+    }
+
+    &--disabled {
+      background-color: $c-main-disabled;
     }
   }
 
@@ -53,20 +59,14 @@
     }
 
     &:hover:not(&--disabled) {
-      background-color: $c-main;
-      color: $c-white;
+      color: $c-main-hover;
+      border: 1px solid $c-main-hover;
     }
-  }
 
-  &--xs {
-    width: $button-width-xs;
-  }
-
-  &--md {
-    width: $button-width-md;
-  }
-
-  &--lg {
-    width: $button-width-lg;
+    &:active:not(&--disabled) {
+      color: $c-main-pressed;
+      border: 1px solid $c-main-pressed;
+      transform: translate(0);
+    }
   }
 }

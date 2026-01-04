@@ -1,7 +1,7 @@
 import './LanguageSwitcher.scss';
 import React, { useState } from 'react';
-import ExpandDown from '../../../assets/icons/expand-down.svg';
-import ExpandUp from '../../../assets/icons/expand-up.svg';
+import ExpandDown from '@assets/icons/expand-down.svg';
+import ExpandUp from '@assets/icons/expand-up.svg';
 import { useTranslation } from 'react-i18next';
 
 const languages = [

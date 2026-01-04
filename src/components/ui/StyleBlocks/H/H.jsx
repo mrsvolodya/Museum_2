@@ -1,7 +1,7 @@
 import React from 'react';
 import './H.scss';
-import useScreenSize from '../../../../hooks/useScreenSize';
-import { colors } from '../../../../styles/colors';
+import useScreenSize from '@hooks/useScreenSize';
+import { colors } from '@styles/colors';
 
 const H = ({
   size = 'm',
@@ -10,6 +10,7 @@ const H = ({
   textAlign = 'center',
   lh = false,
   as = 'h2',
+  className = '',
 }) => {
   const { width } = useScreenSize();
   const isMobile = width < 640;
@@ -53,7 +54,7 @@ const H = ({
   const Tag = as;
 
   return (
-    <div className="h-container">
+    <div className={`h-container ${className}`}>
       <Tag
         style={{
           fontSize: fontSize,

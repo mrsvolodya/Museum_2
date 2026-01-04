@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import CloseIcon from '../../../../assets/icons/close.svg';
+import CloseIcon from '@assets/icons/close.svg';
 import './BurgerMenu.scss';
 
 const BurgerMenu = ({ isOpen, onClose }) => {

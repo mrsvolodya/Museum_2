@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import LandingSection from '../../components/layout/MainLayout/LandingSection/LandingSection';
+import MainLayout from '@components/layout/MainLayout/MainLayout';
+import LandingHomeBlock from '@components/layout/MainLayout/LandingSection/LandingHomeBlock/LandingHomeBlock';
 
 const Home = () => {
   useEffect(() => {
@@ -7,9 +8,11 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home">
-      <LandingSection />
-    </div>
+    <MainLayout>
+      <main className="home">
+        <LandingHomeBlock />
+      </main>
+    </MainLayout>
   );
 };
 

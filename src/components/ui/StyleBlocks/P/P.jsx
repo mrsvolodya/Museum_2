@@ -1,6 +1,6 @@
 import React from 'react';
 import './P.scss';
-import { colors } from '../../../../styles/colors';
+import { colors } from '@styles/colors';
 
 const P = ({
   fsize = '16px',
@@ -8,6 +8,7 @@ const P = ({
   children,
   color = colors.white,
   textAlign = 'center',
+  fontWeight = '400',
   className = '',
 }) => {
   return (
@@ -18,6 +19,7 @@ const P = ({
           color: color,
           textAlign: textAlign,
           lineHeight: lineHeight,
+          fontWeight: fontWeight,
         }}
       >
         {children}
