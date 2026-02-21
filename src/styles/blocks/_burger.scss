@@ -1,0 +1,54 @@
+// Hamburger / burger menu icon
+// cursor: pointer is set on the button element itself.
+// The inner .burger__line spans use pointer-events: none so they never
+// accidentally override the button's cursor, keeping the pointer consistent
+// across the entire hit area.
+
+.burger {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  flex-shrink: 0;
+  transition: opacity 0.3s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &__line {
+    // pointer-events: none ensures the spans never block
+    // the button's own cursor, eliminating the inconsistency
+    // where cursor switched between 'default' and 'pointer'
+    // depending on whether you hovered the line or the gap.
+    pointer-events: none;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    border-radius: 1px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  // Active (open) state - transforms lines into X
+  &--active &__line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  &--active &__line:nth-child(2) {
+    opacity: 0;
+  }
+
+  &--active &__line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
+  }
+}

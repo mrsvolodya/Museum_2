@@ -1,7 +1,19 @@
 @import 'utils';
 @import 'fonts';
 @import 'typography';
+@import 'blocks/header';
+@import 'blocks/burger';
+@import 'blocks/lang-switcher';
+@import 'blocks/side-menu';
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
+  margin: 0;
   background: $c-gray;
+  scroll-behavior: smooth;
 }

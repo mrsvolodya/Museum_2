@@ -6,14 +6,161 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Title</title>
+    <title>NAMU</title>
     <link
       rel="stylesheet"
       href="./styles/main.scss"
     />
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
+    <header class="header">
+      <div class="header__container">
+        <a class="header__logo" href="#">
+          NAMU
+        </a>
+
+        <nav class="header__nav">
+          <ul class="header__menu">
+            <li class="header__menu-item">
+              <a class="header__menu-link" href="#exhibitions">
+                Exhibitions
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__menu-link" href="#events">
+                Events
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__menu-link" href="#visit">
+                Plan a visit
+              </a>
+            </li>
+            <li class="header__menu-item">
+              <a class="header__menu-link" href="#news">
+                News
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="lang-switcher">
+          <button
+            class="lang-switcher__toggle"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            EN
+          </button>
+          <ul class="lang-switcher__dropdown" role="listbox">
+            <li class="lang-switcher__item">
+              <button
+                class="lang-switcher__option lang-switcher__option--active"
+                type="button"
+                role="option"
+                aria-selected="true"
+              >
+                EN
+              </button>
+            </li>
+            <li class="lang-switcher__item">
+              <button
+                class="lang-switcher__option"
+                type="button"
+                role="option"
+                aria-selected="false"
+              >
+                UA
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <button
+          class="burger"
+          type="button"
+          aria-label="Open menu"
+          aria-expanded="false"
+        >
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+          <span class="burger__line"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="side-menu" aria-hidden="true">
+      <div class="side-menu__backdrop"></div>
+      <div class="side-menu__content">
+        <button
+          class="side-menu__close"
+          type="button"
+          aria-label="Close menu"
+        >
+          &times;
+        </button>
+
+        <div class="lang-switcher lang-switcher--side">
+          <button
+            class="lang-switcher__toggle"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+          >
+            EN
+          </button>
+          <ul class="lang-switcher__dropdown" role="listbox">
+            <li class="lang-switcher__item">
+              <button
+                class="lang-switcher__option lang-switcher__option--active"
+                type="button"
+                role="option"
+                aria-selected="true"
+              >
+                EN
+              </button>
+            </li>
+            <li class="lang-switcher__item">
+              <button
+                class="lang-switcher__option"
+                type="button"
+                role="option"
+                aria-selected="false"
+              >
+                UA
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <nav class="side-menu__nav">
+          <ul class="side-menu__menu">
+            <li class="side-menu__item">
+              <a class="side-menu__link" href="#exhibitions">
+                Exhibitions
+              </a>
+            </li>
+            <li class="side-menu__item">
+              <a class="side-menu__link" href="#events">
+                Events
+              </a>
+            </li>
+            <li class="side-menu__item">
+              <a class="side-menu__link" href="#visit">
+                Plan a visit
+              </a>
+            </li>
+            <li class="side-menu__item">
+              <a class="side-menu__link" href="#news">
+                News
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
     <script src="scripts/main.js"></script>
   </body>
 </html>

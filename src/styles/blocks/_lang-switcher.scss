@@ -1,0 +1,101 @@
+// Language switcher (EN / UA dropdown)
+// cursor: pointer is set explicitly on BOTH the toggle button and each
+// option button so the pointer is consistent regardless of which part
+// of the component is hovered.
+
+.lang-switcher {
+  position: relative;
+  flex-shrink: 0;
+
+  &__toggle {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #999;
+    }
+
+    // Chevron indicator using a pseudo-element —
+    // pointer-events: none prevents this decorative element from
+    // blocking the button cursor at the edge of the button.
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-right: 1.5px solid currentcolor;
+      border-bottom: 1.5px solid currentcolor;
+      transform: rotate(45deg);
+      transition: transform 0.3s;
+      pointer-events: none;
+    }
+  }
+
+  &--open &__toggle::after {
+    transform: rotate(-135deg);
+  }
+
+  &__dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 80px;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+    transition: opacity 0.2s, visibility 0.2s;
+    z-index: 200;
+  }
+
+  &--open &__dropdown {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__item {
+    margin: 0;
+  }
+
+  &__option {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    background: transparent;
+    border: none;
+    text-align: left;
+    font-family: Raleway, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #000;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #f5f5f5;
+    }
+
+    &--active {
+      color: #999;
+    }
+  }
+}
