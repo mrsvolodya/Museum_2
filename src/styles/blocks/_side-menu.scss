@@ -1,0 +1,109 @@
+.side-menu {
+  &__backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 150;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    // The backdrop is decorative/functional overlay — it must NOT block
+    // pointer events when hidden, or the cursor on underlying elements breaks
+    pointer-events: none;
+  }
+
+  &__panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 200;
+    width: 280px;
+    height: 100%;
+    background: #fff;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  &--open {
+    .side-menu__backdrop {
+      opacity: 1;
+      visibility: visible;
+      // Only restore pointer events when the menu is fully open
+      pointer-events: auto;
+    }
+
+    .side-menu__panel {
+      transform: translateX(0);
+    }
+  }
+
+  &__close {
+    align-self: flex-end;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    font-size: 24px;
+    line-height: 1;
+    // Explicitly set cursor: pointer — buttons don't show it by default everywhere
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    // Interactive element: always show pointer cursor
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__lang {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__lang-option {
+    background: none;
+    border: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    // Explicitly set cursor: pointer on language buttons in side menu
+    cursor: pointer;
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &--active {
+      font-weight: 700;
+      border-bottom: 2px solid currentColor;
+    }
+  }
+}

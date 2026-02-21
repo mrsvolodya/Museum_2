@@ -6,14 +6,110 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0"
     />
-    <title>Title</title>
+    <title>NAMU</title>
     <link
       rel="stylesheet"
       href="./styles/main.scss"
     />
   </head>
   <body>
-    <h1>Hello Mate Academy</h1>
+    <header class="header">
+      <div class="header__content">
+        <a class="header__logo" href="#">NAMU</a>
+
+        <nav class="header__nav">
+          <a class="header__nav-link" href="#exhibitions">Exhibitions</a>
+          <a class="header__nav-link" href="#events">Events</a>
+          <a class="header__nav-link" href="#visit">Visit</a>
+          <a class="header__nav-link" href="#news">News</a>
+        </nav>
+
+        <div class="header__right">
+          <div class="lang-switcher">
+            <button
+              class="lang-switcher__toggle"
+              type="button"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+            >
+              EN
+            </button>
+            <ul class="lang-switcher__dropdown" role="listbox">
+              <li class="lang-switcher__item">
+                <button
+                  class="lang-switcher__option lang-switcher__option--active"
+                  type="button"
+                  role="option"
+                >
+                  EN
+                </button>
+              </li>
+              <li class="lang-switcher__item">
+                <button
+                  class="lang-switcher__option"
+                  type="button"
+                  role="option"
+                >
+                  UA
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <button
+            class="header__burger"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="side-menu"
+          >
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+            <span class="header__burger-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <aside class="side-menu" id="side-menu" aria-hidden="true">
+      <div class="side-menu__backdrop"></div>
+      <div class="side-menu__panel">
+        <button
+          class="side-menu__close"
+          type="button"
+          aria-label="Close menu"
+        >
+          &times;
+        </button>
+
+        <nav class="side-menu__nav">
+          <a class="side-menu__link" href="#exhibitions">Exhibitions</a>
+          <a class="side-menu__link" href="#events">Events</a>
+          <a class="side-menu__link" href="#visit">Visit</a>
+          <a class="side-menu__link" href="#news">News</a>
+        </nav>
+
+        <div class="side-menu__lang">
+          <button
+            class="side-menu__lang-option side-menu__lang-option--active"
+            type="button"
+          >
+            EN
+          </button>
+          <button
+            class="side-menu__lang-option"
+            type="button"
+          >
+            UA
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <h1>Museum of Art</h1>
+    </main>
+
     <script src="scripts/main.js"></script>
   </body>
 </html>
