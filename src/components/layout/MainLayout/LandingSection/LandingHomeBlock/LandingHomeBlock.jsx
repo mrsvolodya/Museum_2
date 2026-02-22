@@ -4,11 +4,13 @@ import P from '@components/ui/StyleBlocks/P/P';
 import H from '@components/ui/StyleBlocks/H/H';
 import Button from '@components/ui/Button/Button';
 import ResponsiveImage from '@components/ui/ResponsiveImage/ResponsiveImage';
-import HeroImageMobile from '@assets/HeroImages/HeroImageMobile.png';
-import HeroImageTablet from '@assets/HeroImages/HeroImageTablet.png';
-import HeroImageDesktop from '@assets/HeroImages/HeroImageDesktop.png';
+import HeroImageMobile from '@assets/HeroImages/HeroImageMobile.webp';
+import HeroImageTablet from '@assets/HeroImages/HeroImageTablet.webp';
+import HeroImageDesktop from '@assets/HeroImages/HeroImageDesktop.webp';
+import { useTranslation } from 'react-i18next';
 
 const LandingHomeBlock = () => {
+  const { t } = useTranslation();
   return (
     <section className="landing-home-block">
       <div className="landing-home-block__container container">
@@ -20,24 +22,23 @@ const LandingHomeBlock = () => {
               lineHeight="140%"
               className="landing-home-block__period"
             >
-              10 серпня - 10 листопада
+              {t('home.period')}
             </P>
 
             <H
               size="h1"
-              lineHeight="150%"
-              textAlign="start"
+              textAlign="center"
               className="landing-home-block__heading"
             >
-              Мистецтво ХІХ - ХХ ст.
+              {t('home.title')}
             </H>
 
             <P textAlign="start" className="landing-home-block__description">
-              Внесок українських митців у світову культуру 19-20 ст.
+              {t('home.description')}
             </P>
 
             <div className="landing-home-block__actions">
-              <Button>Купити квиток</Button>
+              <Button>{t('home.buyTicket')}</Button>
             </div>
 
             <div className="landing-home-block__date">
@@ -48,7 +49,7 @@ const LandingHomeBlock = () => {
                 fontWeight="700"
                 className="landing-home-block__date-text"
               >
-                10.08 - 10.10
+                {t('home.shortDate')}
               </P>
               <div className="landing-home-block__date-line"></div>
             </div>

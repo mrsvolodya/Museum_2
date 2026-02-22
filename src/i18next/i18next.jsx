@@ -16,7 +16,7 @@ i18next.use(initReactI18next).init({
   resources,
   lng: 'en',
   fallbackLng: 'en',
-  debug: true,
+  debug: false,
   interpolation: {
     escapeValue: false, // React already escapes
   },

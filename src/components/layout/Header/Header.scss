@@ -8,6 +8,7 @@
   background-color: $c-background;
   width: 100%;
   z-index: 11;
+  flex-shrink: 0;
 
   @include header-height;
 

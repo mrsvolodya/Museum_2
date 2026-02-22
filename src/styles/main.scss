@@ -16,6 +16,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body:has(.side-menu--open) {
+  overflow-y: hidden;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

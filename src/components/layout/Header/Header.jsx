@@ -6,13 +6,9 @@ import BrendLogo from '@assets/icons/namu.svg';
 import LanguageSwitcher from '@components/ui/LanguageSwitcher/LanguageSwitcher';
 import useScreenSize from '@hooks/useScreenSize';
 
-const Header = ({ isMenuOpen, setIsMenuOpen }) => {
+const Header = ({ variant, onOpen = () => {}, onClose = () => {} }) => {
   const navigate = useNavigate();
   const screenSize = useScreenSize();
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
 
   return (
     <header className="header">
@@ -31,23 +27,23 @@ const Header = ({ isMenuOpen, setIsMenuOpen }) => {
             </a>
           </div>
           <div className="header__actions">
-            {isMenuOpen ? (
+            {variant === 'main' ? (
+              <button
+                onClick={onOpen}
+                className="header__btn header__btn--menu"
+              >
+                <span className="header__icon header__icon--menu" />
+              </button>
+            ) : (
               <>
                 <button
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={onClose}
                   className="header__btn header__btn--close"
                 >
                   <span className="header__icon header__icon--close" />
                 </button>
                 {screenSize.width < 640 && <LanguageSwitcher />}
               </>
-            ) : (
-              <button
-                onClick={toggleMenu}
-                className="header__btn header__btn--menu"
-              >
-                <span className="header__icon header__icon--menu" />
-              </button>
             )}
             {screenSize.width > 640 && <LanguageSwitcher />}
           </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Button.scss';
 
 const Button = ({
@@ -10,9 +11,11 @@ const Button = ({
   onClick,
   type = 'button',
   className = '',
+  to,
+  href,
   ...props
 }) => {
-  const buttonClasses = [
+  const classes = [
     'button',
     `button--${variant}`,
     `button--${size}`,
@@ -23,12 +26,35 @@ const Button = ({
     .filter(Boolean)
     .join(' ');
 
+  if (to) {
+    return (
+      <Link to={to} className={classes} {...props}>
+        {children}
+      </Link>
+    );
+  }
+
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={classes}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...props}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
     <button
       type={type}
-      className={buttonClasses}
+      className={classes}
       onClick={onClick}
       disabled={disabled}
+      {...props}
     >
       {children}
     </button>
